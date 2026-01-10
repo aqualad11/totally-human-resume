@@ -1,0 +1,37 @@
+- id: universe-3d
+  name: "Universe-3D — 3D Model Search Engine & Marketplace"
+  role: "Creator & Lead Engineer"
+  location: "San Diego, CA"
+  start_date: "2024"
+  end_date: "Present"
+  highlights:
+    - "Developed a 3D model search engine using SvelteKit, providing a fast, clean, and responsive browsing experience for community-submitted 3D assets."
+    - "Engineered a custom web crawler in Deno to ingest, normalize, and unify model data from multiple repositories with inconsistent structures."
+    - "Implemented a centralized model database using Supabase Postgres and Supabase Storage, enabling efficient metadata querying and scalable asset management."
+    - "Integrated Stripe Checkout for secure purchasing of digital 3D model files and future marketplace transactions."
+  tags:
+    - sveltekit
+    - deno
+    - supabase
+    - stripe
+    - web-crawler
+
+- id: print-service
+  name: "3D Printing Service — Model Upload & Customization Platform"
+  role: "Founder & Operator"
+  location: "San Diego, CA"
+  start_date: "2024"
+  end_date: "Present"
+  highlights:
+    - "Built a full-featured print-on-demand platform with SvelteKit, allowing users to upload 3D models directly through an intuitive interface."
+    - "Implemented interactive 3D model previews using Three.js, enabling users to inspect orientation, scale, and geometry before ordering."
+    - "Developed a customization system allowing users to select material, color, infill density, and other print parameters with live updates."
+    - "Integrated Stripe Checkout to streamline the purchase process, supporting fast and secure payment for custom 3D print orders."
+    - "Utilized Supabase Postgres and Supabase Storage to manage user uploads, customization metadata, and order information."
+  tags:
+    - sveltekit
+    - three-js
+    - supabase
+    - stripe
+    - 3d-printing
+

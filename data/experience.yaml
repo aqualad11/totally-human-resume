@@ -1,0 +1,20 @@
+- id: ezoic-swe2
+  title: "Software Engineer II"
+  company: "Ezoic"
+  location: "Carlsbad, CA"
+  start_date: "March 2020"
+  end_date: "July 2024"
+  highlights:
+    - "Regularly designed and developed high-quality, scalable code for various systems, focusing on improving functionality and user experience."
+    - "Acted as a mentor to junior developers, guiding them through complex software development cycles and fostering a culture of technical excellence and innovation."
+    - "Worked closely with other teams, including sales and account management, to understand client needs and translate them into functional software solutions."
+    - "Maintain and enhance core JavaScript integrations, providing deep technical knowledge and support."
+    - "Participated in the annual strategic planning process, researching market trends, competitor analysis, and emerging technologies."
+    - "Provided critical support to account managers and clients, addressing technical queries and troubleshooting issues."
+    - "Actively participated in final interviews during intense hiring periods, helping to select and onboard top-tier talent."
+  tags:
+    - javascript
+    - mentorship
+    - cross-functional
+    - strategy
+

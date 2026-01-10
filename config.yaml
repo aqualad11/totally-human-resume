@@ -1,0 +1,28 @@
+# Resume Build Configuration
+# AI agents: Modify this file to customize which content appears in the resume
+
+theme:
+  color: "#E40019"  # Primary accent color (hex)
+
+# Personal info is always included from data/personal.yaml
+
+# Sections to include, in order
+sections:
+  - skills
+  - projects
+  - experience
+  - education
+
+# Entry selection by ID (use "all" to include everything in that section)
+include:
+  experience:
+    - ezoic-swe2
+  education:
+    - csulb-bs-cs
+  projects:
+    - universe-3d
+    - print-service
+
+# Optional: limit number of highlights per entry (null = show all)
+max_highlights: null
+

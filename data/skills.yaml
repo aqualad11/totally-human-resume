@@ -1,0 +1,36 @@
+categories:
+  - name: "Languages"
+    skills:
+      - "Golang"
+      - "JavaScript"
+      - "TypeScript"
+      - "HTML"
+      - "CSS"
+      - "Python"
+
+  - name: "Libraries & Tools"
+    skills:
+      - "Svelte"
+      - "SvelteKit"
+      - "Vite"
+      - "Webpack"
+      - "Node.js"
+      - "Deno"
+      - "Tailwind"
+      - "bulma.css"
+
+  - name: "Cloud"
+    skills:
+      - "S3"
+      - "SQS"
+      - "CloudWatch"
+      - "DynamoDB"
+      - "Cloudflare Pages"
+      - "Supabase"
+
+  - name: "Databases"
+    skills:
+      - "MySQL"
+      - "PostgreSQL"
+      - "Redshift"
+
