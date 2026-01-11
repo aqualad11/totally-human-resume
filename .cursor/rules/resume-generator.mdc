@@ -1,0 +1,54 @@
+---
+description: Rules for generating custom resumes for job applications
+globs: ["*.typ", "resumes/*.typ", "job_applications.json"]
+---
+
+# Resume Generator
+
+This is a Typst-based resume system using the `toy-cv` template.
+
+## Project Structure
+- `resume.typ` - Main template (reference this for structure)
+- `config.yaml` - Default configuration
+- `data/*.yaml` - All resume content (personal, experience, skills, projects, etc.)
+- `job_applications.json` - Tracks all job applications and their resume files
+- `resumes/{Company}_{Job Title}.typ` - Custom resumes per job application
+
+## Creating Custom Resumes
+
+### When the user asks to find jobs:
+1. Use browser tools to snapshot the job listing page
+2. Read `data/skills.yaml` and `data/experience.yaml` to understand the user's profile
+3. Match jobs based on skills and experience level
+4. Skip entry-level roles if user has significant experience
+
+### For each matching job, create `resumes/{Company}_{Job Title}.typ`:
+1. Follow the exact pattern from `resume.typ` - import all data files
+2. Use `../data/` paths since resumes are in a subfolder
+3. Use inline config (don't create separate config files)
+4. Customize only:
+   - `main-color` - Use company brand color
+   - `custom-tagline` - Tailor to job description keywords
+   - `config.sections` - Which sections to include
+   - `config.include` - Which entries by ID (check the data files for available IDs)
+   - Sidebar interests - Match role context if relevant
+
+### Update `job_applications.json` with:
+```json
+{
+  "company": "...",
+  "job_title": "...", 
+  "location": "...",
+  "salary_range": "...",
+  "job_posting_url": "...",
+  "resume_file": "resumes/{Company}_{Job Title}.typ",
+  "fit_score": "Excellent/Good/Fair - brief reason",
+  "status": "pending"
+}
+```
+
+## Key Principles
+- Always reference `resume.typ` for the current template structure
+- Check `data/*.yaml` files for available entry IDs before creating resumes
+- Keep custom resumes self-contained (no external config dependencies)
+- Match the job title in the subtitle to what you're applying for
