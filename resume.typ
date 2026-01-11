@@ -7,9 +7,14 @@
 #let education-data = yaml("data/education.yaml")
 #let skills-data = yaml("data/skills.yaml")
 #let projects-data = yaml("data/projects.yaml")
+#let hackathons-data = yaml("data/hackathons.yaml")
+#let links-data = yaml("data/links.yaml")
+#let interests-data = yaml("data/interests.yaml")
 
-// Theme color from config
+// Theme colors from config
 #let main-color = rgb(config.theme.color)
+#let header-color = rgb(config.theme.color)
+
 
 // Helper: filter entries by IDs from config
 #let filter-entries(entries, section-name) = {
@@ -69,6 +74,31 @@
 
     ]
   ])
+
+  #v(1fr)
+
+  #left-section(title: "Education", [
+    #let edu-entries = filter-entries(education-data, "education")
+    #for edu in edu-entries [
+      *#edu.degree*\
+      #text(size: 0.9em)[#edu.institution]\
+      #text(size: 0.85em, fill: luma(100))[#edu.start_date – #edu.end_date]
+    ]
+  ])
+
+  #v(1fr)
+
+  #left-section(title: "Projects", [
+    #for item in links-data [
+      #link(item.url)[#item.name]\
+    ]
+  ])
+
+  #v(1fr)
+
+  #left-section(title: "Interests", [
+    #interests-data.join(", ")
+  ])
 ]
 
 // Main document
@@ -80,6 +110,7 @@
   ],
   avatar: none,
   left-content: left-content,
+  main-color: header-color,
 )
 
 // Render sections in configured order
@@ -107,10 +138,17 @@
     #right-column-subtitle("Projects")
     #let entries = filter-entries(projects-data, "projects")
     #for (i, project) in entries.enumerate() [
+      #let subtitle-text = if project.at("employer", default: none) != none {
+        [#project.role, #project.employer]
+      } else if project.at("location", default: none) != none {
+        [#project.role, #project.location]
+      } else {
+        [#project.role]
+      }
       #cv-entry(
         title: [*#project.name*],
         date: project.start_date + " – " + project.end_date,
-        subtitle: [#project.role, #project.location],
+        subtitle: subtitle-text,
         [
           #for highlight in limit-highlights(project.highlights) [
             - #highlight
@@ -142,6 +180,25 @@
 
   #if section == "skills" [
     // Skills are in the sidebar, but we could add a right-column version here if needed
+  ]
+
+  #if section == "hackathons" [
+    #right-column-subtitle("Hackathons & Awards")
+    #let entries = filter-entries(hackathons-data, "hackathons")
+    #for (i, hack) in entries.enumerate() [
+      #cv-entry(
+        title: [*#hack.name* — #hack.award],
+        date: hack.date,
+        subtitle: [#hack.role, #hack.location],
+        [
+          #for highlight in limit-highlights(hack.highlights) [
+            - #highlight
+          ]
+        ],
+      )
+      #if i < entries.len() - 1 [#v(1fr)]
+    ]
+    #v(1fr)
   ]
 ]
 

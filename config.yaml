@@ -2,7 +2,7 @@
 # AI agents: Modify this file to customize which content appears in the resume
 
 theme:
-  color: "#E40019"  # Primary accent color (hex)
+  color: "#00A388"       # Accent color (section titles, icons)
 
 # Personal info is always included from data/personal.yaml
 
@@ -11,7 +11,7 @@ sections:
   - skills
   - projects
   - experience
-  - education
+  # - education  # Now in sidebar
 
 # Entry selection by ID (use "all" to include everything in that section)
 include:
@@ -22,6 +22,9 @@ include:
   projects:
     - universe-3d
     - print-service
+  hackathons:
+    - arkusnexus-2025
+    - zoo-dev-2024
 
 # Optional: limit number of highlights per entry (null = show all)
 max_highlights: null
